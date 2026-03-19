@@ -1,0 +1,32 @@
+1. Se o cliente for cadastrado do clube, tem desconto em determinados produtos(CPF)
+2. Se vai ter opção de pagar com VR ou VA
+3. Se o cliente precisa de entrega ao domicílio
+4. Se vai ter a opção de delivery, onde o cliente compra pelo site
+5. Integração com fornecedores
+6. Gestão de produtos
+
+
+
+SISTEMA DE CHAMADA ESCOLAR
+
+Requisitos:
+Deve ter uma Lista com o Nome dos alunos ( para o prof ter o controle de alunos que tem na sala) - Essencial
+Deve ter um local para colocar as presenças e faltas dos alunos+ como vai aparecer se o aluno esta presente ou faltou ( para ter controle de presenças) - Essencial
+Deve estar em ordem alfabética (para uma melhor organização e praticidade) - Desejável 
+Deve ter um local para colocar a data - Desejável 
+
+
+APLICATIVO DE BANCO DIGITAL
+
+Requisitos não funcionais:
+Desempenho - acessar a conta em ate 3 segundos, fazer transferências entre bancos em até 30min
+Segurança - pedir facial, digital ou senha para confirmação de transferências
+Disponibilidade - mudar de tela e não sair do aplicativo
+Usualidade
+
+Stakeholders - Dono da pizzaria, pois ele sabe tudo que tem na pizzaria
+             - Pessoal que faz a confecções das pizzas, pois ele que sabe os ingredientes utilizados
+             - Atendente, pois ela que vai conferir os pedidos
+Técnicas 
+conversaria com o dono para ver o que ele quer no sistema, desde quantidade de sabores, fotos ilustrativas, quantas pessoas vão poder acessar o sistema, se for só em um computador, entre outras.
+iria até a pizzaria e viria como é feito a anotação de pedidos, controle de estoques (comida, bebidas)
