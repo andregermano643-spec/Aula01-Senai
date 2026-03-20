@@ -1,0 +1,61 @@
+Sua Missão: Atividade de Levantamento de Requisitos
+Releia todo o texto identificando necessidades explícitas e implícitas dos stakeholders.
+Elabore uma lista com
+exatamente 10 Requisitos Funcionais (RF)
+— funcionalidades que o sistema deve executar — extraídos ou inferidos a partir do texto.
+Elabore uma lista com
+exatamente 10 Requisitos Não Funcionais (RNF)
+— restrições de qualidade, desempenho, segurança, usabilidade etc.
+Classifique
+cada requisito
+em um dos três níveis de prioridade:
+Essencial
+·
+Importante
+·
+Desejável
+, justificando brevemente sua escolha.
+Utilize a tabela de critérios abaixo como referência para a classificação de prioridade.
+Identifique, para cada RF, qual(is) stakeholder(s) originou(aram) aquela necessidade.
+
+
+
+REQUISITOS PARA AULA DIA 19/03
+
+
+STAKEHOLDERS:
+Gerente de TI - Renato Carvalho - quem abriu o chamado e quem atendeu esse chamado - que o sistema defina as prioridades, e que defina um tempo para ser realizado esse problema, que ele avise o tempo que resta para cada realização de problema - painel para acompanhar os chamados abertos, tudo em tempo real, atualizando em minutos
+
+Supervisora de Manutenção - Cláudia Ramos - que o sistema funcione no celular e que seja de fácil aprendizado para todos - que o operador e supervisor consiga acompanhar os chamados aceitos, sendo realizados e prontos - um local para registrar os chamados realizados, para ter um histórico quando tiver problemas futuros
+
+Técnico de TI - Jorge Melo - mostrar os chamados em ordem de prioridades - ter opção de add comentários, quando tiver fazendo um atendimento
+
+Analista de RH - Patrícia Andrade - ter uma opção para descrever o problema e para qual área é, e uma maneira que o sistema entenda quem é a pessoal solicitando apenas com um login - local onde você consiga ver o históricos de atendimentos feitos por você, caso precisa reabrir
+
+Operador de Produção - Fábio Nogueira - um sistema que seja fácil de mexer poucos botões e poucas informações se possível com imagens e rápida navegação
+
+Diretora de Operações - Dra Helena Saito - que faça relatórios mensais de chamados abertos por setor, tempo médio de resolução problemas recorrentes, para tomadas de decisões - segurança de quem acessa se pode ter acesso por departamentos e que cada pessoa veja o que é pertinente ao ela e todo histórico de uso deve ser guardado por 5 anos - sistema suporte o crescimento da empresa sem que precise refazer tudo
+
+REQUISITOS FUNCINAIS:
+- Registrar quem foi o Solicitante do Chamado [ESSENCIAL]
+- Registrar quem foi Atendente do Chamado [ESSENCIAL]
+- Definir as prioridades dos chamados, com um tempo de realização de acordo com a prioridade [IMPORTANTE]
+- Tempo para executar cada chamado
+- Painel com chamados e que possa ser acompanhado e tempo real [ ESSENCIAL]
+- Sistema funcione em computadores e celulares de fácil aprendizado
+- Possibilidade de outras pessoas acompanhar os chamados sendo realizados pelo celular
+- Registro de históricos para chamados realizados
+- Mostrar ordem de prioridade
+- login de acesso
+- Opção descrever o área e qual o problema ser realizado
+- Histórico de chamados feitos 
+- Relatórios mensais separados por setores
+- Tempo de Resoluções 
+- Problemas recorrentes 
+- Sistema seguro
+
+
+REQUISITOS NÃO FUNCIONAIS:
+- Login que bloqueia acesso de pessoas não autorizados
+- Sistema de que tenha tempo definito para atualizações
+- 
