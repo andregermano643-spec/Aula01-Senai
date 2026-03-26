@@ -1,0 +1,97 @@
+<html>
+    <head>    </head>
+    <style>  
+    button {
+        font: weight 10px ;
+        color: #000;
+        background-color: #ffffff;
+        padding: 10px;
+        margin-left: 10px;
+        border-radius: 10px ;
+        
+    
+    }
+    .blue {
+        background-color: #00d9ff;
+        color: #F2F5F5;
+    }
+    .red {
+        background-color: #d8291d;
+    }
+    </style>
+    <body>
+    <form>
+        <label for="Full Name">Full Name:</label>
+        <input type="text" name="Full Name" placeholder="g. Brain Santos">
+
+        <label for="email">Email:</label>
+        <input type="text" email="email" placeholder="brainsantos@gmail.com"> 
+
+        <label for="Password">Password:</label>
+        <input type="password" password="password" placeholder="******">
+
+        <label for="age"> Age:</label>
+        <input type="number" number="Age" placeholder="18">
+
+        <label for="Bio">Bio:</label>
+        <textarea id="Bio" placeholder="Tell us about your self"></textarea>
+
+        <label for="Course">Course</label>
+        <select id="Course" name="course" placeholder="Select a course">
+            <option value="Wed Development"> Wed Development</option>
+            <option value="Data Science"> Data Science</option>
+            <option value="Ux Desing"> Desing</option>
+            <option value="Cyber Security"> Cyber Security</option>
+        </select>
+        
+        <label for="Skils">Skils:</label>
+        <label for="Html e CSS">Html e CSS</label>
+        <input type="checkbox" id="skils" name="Skils" value="Html e CSS">
+        <label for="Javascript">Javascript</label>
+        <input type="checkbox" id="skils" name="Skils" value="Javascript">
+        <label for="Python">Python</label>
+        <input type="checkbox" id="skils" name="Skils" value="Python">
+
+        <fieldset>
+        
+        <Label for="Experience Level">Experience Level:</Label>
+         <div>
+        <input type="radio" id="Beginner" name="Experience Level" value="Beginner" checked>
+        <label for="Beginner">Beginner </label>
+        </div>
+
+        <div>
+        <input type="radio" id="Intermediate" name="Experience Level" value="Intermediate">
+        <label for="Intermediate">Intermediate</label>
+        </div>
+
+        <div>
+        <input type="radio" id="Advanced" name="Experience Level" value="Advanced">
+        <label for="Advanced">Advanced</label>
+        </div>
+        </fieldset> 
+
+        <div>
+        <label for="Self-Confidence">Self-Confidence</label>
+        <input type="range" id="Self-Confidence" name="Self-Confidence" min="0" max="100" value="50" step="10">
+ 
+        <label for="Uploud CV">Uploud CV:</label>
+        <input type="file" id="file" name="Arquivo">
+        <input type="submit" value="Enviar Arquivo">
+        </div>
+
+        <div>
+         <button class="blue" type="submit">Submit</button>
+         <button type="clear">Clear</button>
+         <button class="red" type="delete">Delete</button>
+        </div>
+
+
+
+
+            
+        
+
+        
+    
+</html>

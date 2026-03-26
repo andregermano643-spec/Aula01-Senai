@@ -1,11 +1,55 @@
 <html>
+    <head>
+        <style>
+    label {
+      /* display: block faz o label ocupar a linha inteira,
+         empurrando o input para a linha seguinte */
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #16213e;
+      margin-top: 16px;
+      margin-bottom: 4px;
+      font-family: Arial, sans-serif;
+    }
+
+    
+        
+
+    
+
+
+    
+    
+
+            input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      /* display: block + width: 100% faz o campo ocupar toda a largura */
+      display: block;
+      width: 100%;
+
+      /* box-sizing: border-box inclui padding e borda no cálculo da width */
+      box-sizing: border-box;
+
+      padding: 10px 12px;
+      border: 1px solid #b0c4d8;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #1a1a2e;
+      background-color: #f7fafd;
+    }
+
+        </style>
+    </head>
     <header> </header>
     <form>
 
         <label for="nome">Nome:</label>
     <input type="text" name="nome" placeholder="Brain Dos Santos">
 
-         <label for="email">Email:</label>
+         <label for="email"> <p class="teste"> Email: </p></label>
          <input type="text" email="email" placeholder="brainsantos@gmail.com">
          <fielset>
            <legend>Categoria</legend>
@@ -46,32 +90,4 @@
     
 
 </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
