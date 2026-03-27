@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cards com Formulário</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .card:hover {
+            background-color: #f3c230;
+        }
+
+        .card {
+            width: 200px;
+            height: 150px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 50px;
+        }
+
+        .form-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .linha {
+            display: flex;
+        }
+
+        .coluna{
+           display: flex;
+            flex-direction: column;
+          padding: 10px;
+        }
+
+        form {
+            background: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input,
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .bb {
+            border-bottom: 3px solid #000;
+        }
+
+        body{
+            width: 100%;
+        }
+
+        body label{
+            width: 100%;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label  class="bb" for="Painel de Status">Painel de Status</label>
+    <div class="container">
+        <div class="card">Caixa 1</div>
+        <div class="card">Caixa 2</div>
+        <div class="card">Caixa 3</div>
+        <div class="card">Caixa 4</div>
+    </div>
+
+    <h3>André</h3>
+
+    <div class="form-container">
+        <form>
+
+            <h3 class="bb"> Contato</h3>
+            <div class="linha">
+                <div class="coluna">
+                    <label for="Seu nome">Seu nome:</label>
+                    <input type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="coluna">
+                    <label for="Seu Email">Seu email:</label>
+                    <input type="email" placeholder="Seu email" required>
+                </div>
+            </div>
+            <textarea rows="4" placeholder="Sua mensagem"></textarea>
+            <fieldset>
+
+                <Label for="Departamento">Departamento:</Label>
+                <div>
+                    <input type="radio" id="T.I" name="Departamento" value="T.I" checked>
+                    <label for="T.I">T.I</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="RH" name="Departamento" value="RH">
+                    <label for="RH">RH</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="Financeiro" name="Departamento" value="Financeiro">
+                    <label for="Financeiro">Financeiro</label>
+                </div>
+            </fieldset>
+
+            <select id="Course" name="course" placeholder="Select a course">
+            <option value="Wed Development"> Wed Development</option>
+            <option value="Data Science"> Data Science</option>
+            <option value="Ux Desing"> Desing</option>
+            <option value="Cyber Security"> Cyber Security</option>
+        </select>
+            <div class="linha">
+            <input type="checkbox" id="skils" name="Skils" value="Declaro que as informações acima são verdadeira">
+            <label for="Declaro que as informações acima são verdadeira">Declaro que as informações acima são
+                verdadeira</label>
+                </div>
+
+            <button type="submit">Enviar Chamado</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
