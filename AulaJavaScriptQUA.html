@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .lista{
+            display: flex;
+        }
+        .card{
+            width: 150px;
+            height: 100px;
+            padding: 10px;
+            box-shadow: 10px 2px 10px #000;
+
+            margin: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="lista"></div>
+      <!--<div class="card">
+        <p class="nome">Notebook</P>
+        <h3>Usado</h3>
+        <p>R$ 2900</p>
+        </div>-->
+
+        
+    <script>
+        const produtos = [
+            {"nome": "Notebook","preco": 2900, "descricao": "Usado"},
+            {"nome": "TVSmart50P", "preco": 4200, "descricao": "LG"}, 
+            {"nome": "Pocox7Pro", "preco": 1700, "descricao": "Importado"},
+            {"nome": "BateriaEletrica", "preco": 3900, "descricao": "Estudo"},
+            {"nome": "Baquetas", "preco": 80, "descricao": "7A"},
+            {"nome": "Teclado", "preco": 6000, "descricao": "Yamaha"}
+           
+        ];
+      produtos.forEach(function(produto){
+            console.log(produto.nome);
+            console.log(produto.preco);
+            console.log(produto.descricao);
+        });
+
+       produtos.forEach((produto) => {
+            console.log(`O Produto ${produto.nome}
+           Custa R$ ${produto.preco}
+          Informação  ${produto.descricao}`)
+        });
+      const produto = {"nome":"Notebook","preco":2900,"descricao":"Usado"}
+        
+      const box = document.querySelector(".lista");
+      
+      var html = "";
+
+    produtos.forEach((produto) => {
+       html += `
+        <div class="card">
+        <p class="nome">${produto.nome}</P>
+        <h3>${produto.descricao}</h3>
+        <p>R$ ${produto.preco}</p>
+        </div>
+        `;
+    });
+     
+    box.innerHTML = html;
+        
+        
+    
+    </script>
+    
+</body>
+</html>

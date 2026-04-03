@@ -18,10 +18,11 @@
         }
 
         .card:hover {
-            background-color: #f3c230;
+            background-color: #34cceb;
         }
 
         .card {
+            color: #ff0800;
             width: 200px;
             height: 150px;
             background-color: white;
@@ -33,7 +34,9 @@
             font-size: 18px;
             font-weight: bold;
             box-shadow: 50px;
-            border: 2px solid #000007; 
+            border-top: 10px solid #991605; 
+             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+             box-shadow: 10px 10px 15px red;
         }
 
         .form-container {
@@ -86,7 +89,25 @@
         body{
             width: 100%;
         }
+        .Abertos{
+            color:#f3c230;
+             box-shadow: 10px 10px 15px #f3c230;
+             border-top: 10px solid #ebcd34; 
+        }
+        .Andamentos {
+            color:#37f330;
+             box-shadow: 10px 10px 15px #29d623;
+             border-top: 10px solid hwb(140 17% 43%);
+        }
+        .Resolvidos {
+            color:#0d1ca3;
+             box-shadow: 10px 10px 15px #3b64bb;
+             border-top: 10px solid #091a4b;
 
+        }
+        .bb {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+        }
         body label{
             width: 100%;
             display: flex;
@@ -98,9 +119,9 @@
 
     <label  class="bb" for="Painel de Status">Painel de Status</label>
     <div class="container">
-        <div class="card">Abertos</div>
-        <div class="card">Andamentos</div>
-        <div class="card">Resolvidos</div>
+        <div class="card Abertos">Abertos</div>
+        <div class="card Andamentos">Andamentos</div>
+        <div class="card Resolvidos">Resolvidos</div>
         <div class="card">Cancelados</div>
     </div>
 
