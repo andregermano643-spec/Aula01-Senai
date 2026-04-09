@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: rgb(79, 159, 212);
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+
+    
+
+    .lista {
+      margin-top: 3px;
+    }
+
+    .item {
+      padding: 10px;
+      border: 1px solid #111010;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .remover {
+      background-color: rgb(10, 10, 10);
+      color: rgb(250, 248, 248);
+      border: none;
+      cursor: pointer;
+      padding: 5px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Cadastro</h2>
+
+  <input type="text" id="nome" placeholder="Nome">
+  <input type="text" id="cargo" placeholder="Cargo">
+  <button onclick="adicionar()">Adicionar</button>
+
+  <div class="lista" id="lista"></div>
+
+  <script>
+    // 🔥 Carrega do localStorage (ou inicia vazio)
+    const pessoas = JSON.parse(localStorage.getItem("pessoas")) || [];
+
+    function adicionar() {
+      const nome = document.getElementById("nome").value;
+      const cargo = document.getElementById("cargo").value;
+
+      if (nome === "" || cargo === "") {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      pessoas.push({ nome, cargo });
+
+      // 🔥 Salva no localStorage
+      localStorage.setItem("pessoas", JSON.stringify(pessoas));
+
+      console.log("Lista após adicionar:");
+      console.table(pessoas);
+
+      document.getElementById("nome").value = "";
+      document.getElementById("cargo").value = "";
+
+      atualizarLista();
+    }
+
+    function remover(index) {
+      pessoas.splice(index, 1);
+
+      // 🔥 Atualiza no localStorage
+      localStorage.setItem("pessoas", JSON.stringify(pessoas));
+
+      console.log("Lista após remover:");
+      console.table(pessoas);
+
+      atualizarLista();
+    }
+
+    function atualizarLista() {
+      const lista = document.getElementById("lista");
+      lista.innerHTML = "";
+
+      pessoas.forEach((pessoa, index) => {
+        const div = document.createElement("div");
+        div.classList.add("item");
+
+        div.innerHTML = `
+          <span>
+            <strong>${pessoa.nome}</strong> - ${pessoa.cargo}
+          </span>
+          <button class="remover">Excluir</button>
+        `;
+
+        div.querySelector("button").addEventListener("click", () => {
+          remover(index);
+        });
+
+        lista.appendChild(div);
+      });
+    }
+
+    // 🔥 Renderiza ao abrir a página
+    atualizarLista();
+  </script>
+
+</body>
+</html>

@@ -37,12 +37,13 @@
             {"nome": "Teclado", "preco": 6000, "descricao": "Yamaha"}
            
         ];
+       
       produtos.forEach(function(produto){
             console.log(produto.nome);
             console.log(produto.preco);
             console.log(produto.descricao);
         });
-
+ 
        produtos.forEach((produto) => {
             console.log(`O Produto ${produto.nome}
            Custa R$ ${produto.preco}
@@ -55,7 +56,7 @@
       var html = "";
 
     produtos.forEach((produto) => {
-       html += `
+       html = `
         <div class="card">
         <p class="nome">${produto.nome}</P>
         <h3>${produto.descricao}</h3>

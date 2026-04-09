@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Chamados</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 5px;
+      background: #ddd;
+    }
+
+    button.remover {
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 8px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FORMULÁRIO -->
+  <section>
+    <h2>Novo Chamado</h2>
+    <form id="form">
+      <input type="text" id="nome" placeholder="Nome">
+      <select id="categoria">
+        <option value="">Categoria</option>
+        <option>Suporte</option>
+        <option>Acesso</option>
+        <option>Equipamento</option>
+      </select>
+
+      <label><input type="radio" name="dep" value="TI"> TI</label>
+      <label><input type="radio" name="dep" value="RH"> RH</label>
+
+      <button type="submit">Adicionar</button>
+    </form>
+  </section>
+
+  <!-- TABELA -->
+  <section>
+    <h2>Chamados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Protocolo</th>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Departamento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tabela"></tbody>
+    </table>
+  </section>
+
+  <script>
+    const chamados = JSON.parse(localStorage.getItem("chamados")) || [];
+
+    const form = document.getElementById("form");
+    const tabela = document.getElementById("tabela");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value;
+      const categoria = document.getElementById("categoria").value;
+      const dep = document.querySelector('input[name="dep"]:checked');
+
+      if (!nome || !categoria) {
+        alert("Preencha os campos!");
+        return;
+      }
+
+      const chamado = {
+        protocolo: "#2026-" + Math.floor(Math.random() * 1000),
+        nome,
+        categoria,
+        departamento: dep ? dep.value : "N/A"
+      };
+
+      chamados.push(chamado);
+
+      localStorage.setItem("chamados", JSON.stringify(chamados));
+
+      console.log("Chamados:");
+      console.table(chamados);
+
+      form.reset();
+      renderizar();
+    });
+
+    function renderizar() {
+      tabela.innerHTML = "";
+
+      chamados.forEach((c, index) => {
+        tabela.innerHTML += `
+          <tr>
+            <td>${c.protocolo}</td>
+            <td>${c.nome}</td>
+            <td>${c.categoria}</td>
+            <td>${c.departamento}</td>
+            <td>
+              <button class="remover" onclick="remover(${index})">
+                Excluir
+              </button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    function remover(index) {
+      chamados.splice(index, 1);
+
+      localStorage.setItem("chamados", JSON.stringify(chamados));
+
+      console.log("Após remover:");
+      console.table(chamados);
+
+      renderizar();
+    }
+
+    renderizar();
+  </script>
+
+</body>
+</html>

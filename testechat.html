@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Aluno</title>
+</head>
+<body>
+
+    <h2>Cadastro</h2>
+    <form id= "dadosAlunos">
+        <h3>Lista de Alunos</h3>
+
+    <ul id="listaAlunos"></ul>
+
+<div>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" placeholder="Digite seu nome"></div>
+
+    <div>
+    <label for="curso">Curso:</label><br>
+    <input type="text" id="curso" placeholder="Digite seu curso"></div>
+
+    <div>
+    <label for="nota">Nota:</label><br>
+    <input type="number" id="nota" placeholder="Digite sua nota"></div>
+    <input type="submit">
+
+      
+
+    </form>
+    <script>
+        const alunos = [];
+        var form = document.getElementById("dadosAlunos");
+        form.addEventListener("submit",function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const curso = document.getElementById("curso").value;
+            const nota = Number(document.getElementById("nota").value);
+
+            const novoAluno = { nome, curso, nota};
+
+             
+
+        
+             
+            alunos.push(novoAluno);
+            console.log(alunos);
+
+
+
+            
+        });
+    </script>
+
+</body>
+</html>

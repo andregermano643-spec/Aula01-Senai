@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingressos Jogos do São Paulo</title>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+body {
+    background-image: url("img/morumbi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Camada escura por cima do fundo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.topo {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-bottom: 5px solid #b30000;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.logo-area h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+
+    /* Cards */
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-bottom: 50px;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #000;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+        transition: 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Bordas topo estilo SPFC */
+    .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background: linear-gradient(90deg, #b30000, #fff, #000);
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 20px rgba(255,255,255,0.2);
+    }
+
+    .card h2 {
+        color: #b30000;
+        margin-bottom: 12px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .card p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .card span {
+        font-weight: bold;
+        color: #000;
+        font-size: 18px;
+        background-color: #b30000;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: white;
+        display: inline-block;
+    }
+
+    /* Formulário */
+    .form-section {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+        color: black;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Bordas topo do formulário estilo SPFC */
+    .form-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        background: linear-gradient(90deg, #b30000, #fff, #000);
+    }
+
+    .form-section h2 {
+        text-align: center;
+        color: #b30000;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #000;
+    }
+
+    input, select {
+        padding: 12px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #b30000;
+        box-shadow: 0px 0px 6px rgba(179, 0, 0, 0.6);
+    }
+
+    button {
+        background-color: #b30000;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    button:hover {
+        background-color: #000;
+        color: white;
+    }
+
+    /* Tabela de pedidos */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    table thead tr {
+        background-color: #b30000;
+        color: white;
+    }
+
+    table th, table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-size: 14px;
+        border-top: 3px solid #b30000;
+    }
+</style>
+</head>
+
+<body>
+
+    <header class="topo">
+    <div class="logo-area">
+        <img src="https://images.seeklogo.com/logo-png/12/1/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="Logo São Paulo FC" class="logo">
+        <h1>Ingressos Jogos do São Paulo</h1>
+    </div>
+</header>
+
+    <div class="container">
+
+        <!-- Cards -->
+        <section class="cards">
+            <div class="card">
+                <h2>Arquibancada</h2>
+                <p>Setor popular com visão ampla do campo.</p>
+                <span>R$ 50,00</span>
+            </div>
+
+            <div class="card">
+                <h2>Cadeira Superior</h2>
+                <p>Boa visão do estádio, ideal para famílias.</p>
+                <span>R$ 80,00</span>
+            </div>
+
+            <div class="card">
+                <h2>Cadeira Inferior</h2>
+                <p>Mais próximo do gramado e mais conforto.</p>
+                <span>R$ 120,00</span>
+            </div>
+
+            <div class="card">
+                <h2>Camarote</h2>
+                <p>Área VIP com conforto e serviços exclusivos.</p>
+                <span>R$ 250,00</span>
+            </div>
+        </section>
+
+        <!-- Formulário -->
+        <section class="form-section">
+            <h2>Comprar Ingresso</h2>
+
+            <form>
+                <div>
+                    <label for="nome">Nome Completo:</label><br>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mail:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+
+                <div>
+                    <label for="setor">Selecione o Setor:</label><br>
+                    <select id="setor" name="setor" required>
+                        <option value="">-- Escolha um setor --</option>
+                        <option value="arquibancada">Arquibancada</option>
+                        <option value="cadeira-superior">Cadeira Superior</option>
+                        <option value="cadeira-inferior">Cadeira Inferior</option>
+                        <option value="camarote">Camarote</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="pagamento">Forma de Pagamento:</label><br>
+                    <select id="pagamento" name="pagamento" required>
+                        <option value="">-- Escolha uma forma --</option>
+                        <option value="debito">Débito</option>
+                        <option value="credito">Crédito</option>
+                        <option value="pix">Pix</option>
+                    </select>
+                </div>
+
+                <button type="submit">Realizar Compra</button>
+            </form>
+        </section>
+
+        <section class="cards" id="resumoSetores">
+    <div class="card">
+        <h2>Arquibancada</h2>
+        <p>Ingressos comprados:</p>
+        <span id="qtdArquibancada">0</span>
+    </div>
+
+    <div class="card">
+        <h2>Cadeira Superior</h2>
+        <p>Ingressos comprados:</p>
+        <span id="qtdSuperior">0</span>
+    </div>
+
+    <div class="card">
+        <h2>Cadeira Inferior</h2>
+        <p>Ingressos comprados:</p>
+        <span id="qtdInferior">0</span>
+    </div>
+
+    <div class="card">
+        <h2>Camarote</h2>
+        <p>Ingressos comprados:</p>
+        <span id="qtdCamarote">0</span>
+    </div>
+</section>
+        <section class="form-section" style="margin-top: 30px;">
+    <h2>Pedidos Realizados</h2>
+
+    <table id="tabelaPedidos" style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+        <thead>
+            <tr style="background-color: #b30000; color: white;">
+                <th style="padding: 10px; border: 1px solid #ccc;">Número do Pedido</th>
+                <th style="padding: 10px; border: 1px solid #ccc;">Nome do Comprador</th>
+                <th style="padding: 10px; border: 1px solid #ccc;">Setor Escolhido</th>
+                <th style="padding: 10px; border: 1px solid #ccc;">Forma de Pagamento</th>
+            </tr>
+        </thead>
+
+        <tbody id="corpoTabela">
+            <!-- Pedidos serão adicionados aqui -->
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+    <footer>
+        © 2026 - Site de Ingressos São Paulo FC
+    </footer>
+
+    <script>
+    // Carregar pedidos do localStorage (se existir)
+    let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+    // Função para atualizar a tabela usando forEach
+
+    function atualizarResumoSetores() {
+    let arquibancada = 0;
+    let superior = 0;
+    let inferior = 0;
+    let camarote = 0;
+
+    pedidos.forEach((pedido) => {
+        if (pedido.setor === "arquibancada") {
+            arquibancada++;
+        } else if (pedido.setor === "cadeira-superior") {
+            superior++;
+        } else if (pedido.setor === "cadeira-inferior") {
+            inferior++;
+        } else if (pedido.setor === "camarote") {
+            camarote++;
+        }
+    });
+
+    document.getElementById("qtdArquibancada").textContent = arquibancada;
+    document.getElementById("qtdSuperior").textContent = superior;
+    document.getElementById("qtdInferior").textContent = inferior;
+    document.getElementById("qtdCamarote").textContent = camarote;
+}
+    function atualizarTabela() {
+        let corpoTabela = document.getElementById("corpoTabela");
+        corpoTabela.innerHTML = ""; // limpa a tabela antes de atualizar
+
+        pedidos.forEach((pedido) => {
+            let linha = document.createElement("tr");
+
+            linha.innerHTML = `
+                <td style="padding: 10px; border: 1px solid #ccc;">${pedido.numero}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">${pedido.nome}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">${pedido.setor}</td>
+                <td style="padding: 10px; border: 1px solid #ccc;">${pedido.pagamento}</td>
+            `;
+
+            corpoTabela.appendChild(linha);
+        });
+    }
+
+    // Atualiza tabela assim que a página carregar
+    atualizarTabela();
+
+    // Capturando o formulário
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // impede recarregar a página
+
+        let nome = document.getElementById("nome").value;
+        let setor = document.getElementById("setor").value;
+        let pagamento = document.getElementById("pagamento").value;
+
+        // Criando número do pedido automático
+        let numeroPedido = pedidos.length + 1;
+
+        // Criando objeto do pedido
+        let novoPedido = {
+            numero: numeroPedido,
+            nome: nome,
+            setor: setor,
+            pagamento: pagamento
+        };
+
+        // Adicionando no array
+        pedidos.push(novoPedido);
+
+        // Salvando no localStorage para não apagar ao atualizar
+        localStorage.setItem("pedidos", JSON.stringify(pedidos));
+        console.log(pedidos);
+
+        // Atualizar tabela
+        atualizarTabela();
+        atualizarResumoSetores();
+
+        // Limpar formulário
+        form.reset()
+
+     
+    });
+</script>
+
+</body>
+</html>
